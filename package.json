@@ -1,0 +1,20 @@
+{
+  "name": "gamejam-web",
+  "author": "Adam Vesecky",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel view/index.html --out-dir build",
+    "deploy": "parcel build view/index.html --out-dir build --no-cache --public-url https://aphgames.cz/gamejam --no-source-maps",
+    "dev_en": "parcel view/en/index.html --out-dir build",
+    "deploy_en": "parcel build view/en/index.html --out-dir build --no-cache --public-url https://aphgames.cz/gamejam/en --no-source-maps"
+  },
+  "devDependencies": {
+    "parcel": "1.12.3",
+    "sass": "^1.49.9",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "rellax": "^1.12.1"
+  }
+}

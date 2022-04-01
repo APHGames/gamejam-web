@@ -1,0 +1,282 @@
+
+$bgr-brighter: #3386b5;
+$bgr-darker: #26729e;
+$bgr-dark: #165169;
+$bgr-yellow: #febe20;
+$content-color: #F3F4F5;
+
+html {
+	font-size: 100%;
+}
+
+
+body {
+	background-color: $bgr-yellow;
+	color: $content-color;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin: 0px;
+}
+
+
+.pad1 {
+	width: 100%;
+	opacity: 0.9;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	overflow: hidden;
+
+	img {
+		width: 60vw;
+		position: relative;
+		left: -10vw;
+	}
+}
+
+.pad2 {
+	width: 100%;
+	opacity: 0.9;
+	text-align: right;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	overflow: hidden;
+
+	img {
+		width: 60vw;
+		position: relative;
+		right: -10vw;
+	}
+}
+
+.path {
+	position: absolute;
+
+	img {
+		width: 30vw;
+		position: relative;
+		right: -30vw;
+		top: -5vw;
+	}
+}
+
+.container {
+	position: relative;
+	margin: 2rem;
+}
+
+
+a:visited, a:link {
+	color: white;
+}
+
+.org {
+	text-align: center;
+	z-index: 100;
+	font-size: 2.2vw;
+	text-shadow: -0.1vw -0.1vw #00000050;
+
+	.faculty {
+		text-transform: uppercase;
+	}
+}
+
+.title {
+	font-size: 10vw;
+	margin-left: 2vw;
+	text-transform: uppercase;
+	text-shadow: -0.3vw -0.3vw #deae10;
+
+	h1, h2 {
+		margin: 0px;
+	}
+
+	h2 {
+		line-height: 15vw;
+	}
+
+	.date {
+		font-size: 4vw;
+		text-shadow: -0.1vw -0.1vw #deae10;
+		margin-left: 1vw;
+		font-weight: bold;
+	}
+
+	.links {
+		position: absolute;
+		top: 35vw;
+		left: 32vw;
+
+		a {
+			img {
+				width: 6vw;
+			}
+			
+			text-decoration: none !important;
+			border:0px !important;
+			outline:none;
+			border-width: 0px;
+			outline-width:0px;
+			border-bottom: none;
+		}
+
+		.btn {
+			text-shadow: 2px 2px #000000;
+			background: $bgr-dark;
+			display: inline-block;
+			position: relative;
+			bottom: 1.8vw;
+			text-align: center;
+			font-size: 2.2vw;
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-top: 10px;
+			margin-left: 10px;
+			padding-bottom: 10px;
+			text-decoration: none;
+			box-shadow: inset -4px -4px 0px 0px #122946;
+		  }
+		  
+		  .btn:hover,
+		  .btn:focus {
+			background: #356480;
+			box-shadow: inset -4px -4px 0px 0px $bgr-dark;
+		  }
+		  
+		  .btn:active {
+			box-shadow: inset 4px 4px 0px 0px $bgr-dark;
+		  }
+		  
+		  .btn:before,
+		  .btn:after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			box-sizing: content-box;
+		  }
+		  
+		  .btn:before {
+			top: -4px;
+			left: 0;
+			border-top: 4px black solid;
+			border-bottom: 4px black solid;
+		  }
+		  
+		  .btn:after {
+			left: -4px;
+			top: 0;
+			border-left: 4px black solid;
+			border-right: 4px black solid;
+		  }
+		  
+
+	}
+}
+
+.sponsors {
+	padding: 20px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	overflow: hidden;
+
+	img {
+		height: 150px;
+		margin: 15px;
+	}
+}
+
+.dashed {
+	border-top: 2px solid #D2D6DC;
+	border-style: dashed none none none;
+}
+
+.odd {
+	background-color: $bgr-brighter !important;
+}
+
+.content {
+	position: relative;
+	z-index: 100;
+	padding: 10px;
+	font-weight: bold;
+	font-size: 2rem;
+	background-color: $bgr-darker;
+	
+	&.alt {
+		@extend .dashed;
+		background-color: $bgr-brighter;
+	}
+
+	.desc {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		font-size: 1.4rem;
+		line-height: 2rem;
+
+		>div {
+			padding: 10px;
+			padding-left: 30px;
+			padding-right: 30px;
+			margin: 20px;
+			max-width: 700px;
+			font-weight: normal;
+			background-color: $bgr-dark;
+		}
+	}
+
+	.info {
+		text-transform: uppercase;
+		text-align: center;
+		position: relative;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.program {
+		font-size: 1.5rem;
+		font-weight: normal;
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		.day {
+			max-width: 500px;
+			padding: 10px;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-bottom: 20px;
+			margin: 10px;
+			background-color: $bgr-dark;
+
+			>h3 {
+				padding-left: 20px;
+			}
+
+			.terms {
+				display: grid;
+				grid-template-columns: 30% 70%;
+				line-height: 2.5rem;
+
+				div:nth-child(2n + 1) {
+					text-align: right;
+					padding-right: 20px;
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+}
+
+.footer {
+	padding: 10px;
+	font-weight: bold;
+	font-size: 1rem;
+	text-align: center;
+	background-color: $bgr-darker;
+}
