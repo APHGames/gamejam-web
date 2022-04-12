@@ -183,7 +183,9 @@ a:visited, a:link {
 	overflow: hidden;
 
 	img {
-		height: 150px;
+		max-height: 150px;
+		width: auto;
+		max-width: 100%;
 		margin: 15px;
 	}
 }
