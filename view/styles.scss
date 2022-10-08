@@ -1,115 +1,132 @@
 
-$bgr-brighter: #3386b5;
-$bgr-darker: #26729e;
-$bgr-dark: #165169;
-$bgr-yellow: #febe20;
-$content-color: #F3F4F5;
+$bgr-primary: #fae142;
+$bgr-second: #f5db34;
+$bgr-tertiary: #ffed78;
+$bgr-dark: #9d931e;
+$bgr-link: #1e6cc3;
+
+$content-color: #222;
 
 html {
 	font-size: 100%;
 }
 
-
 body {
-	background-color: $bgr-yellow;
 	color: $content-color;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	margin: 0px;
 }
 
+html, body {
+	/* necessary for parallax... there were issues with mobiles that have address bar visible */
+	height: 100%;
+}
 
-.pad1 {
-	width: 100%;
-	opacity: 0.9;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	overflow: hidden;
+.parallax {
+	height: 100%;
 
-	img {
-		width: 60vw;
-		position: relative;
-		left: -10vw;
+
+	.overlay {
+		width: 100%;
+		height: 100%;
+		background-image: url('../assets/noise.png');
+		background-repeat: repeat repeat;
+		position: absolute;
+	}
+
+	.rellax {
+		&.bgr {
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			img {
+				width: 100%;
+			}
+		}
+	
+		position: absolute;
+		left: 0px;
+		bottom: 0vh;
+		overflow:hidden;
+
+		img {
+			width: 100%;
+		}
+	
+		&.x1 {
+			left: calc(50% - 25vh);
+			top: 20vh;
+	
+			img {
+				width: 50vh;
+			}
+		}
+	
+		&.x2 {
+			top: 20vh;
+		}
 	}
 }
 
-.pad2 {
+.title {
+	position: absolute;
+	bottom: 0;
 	width: 100%;
 	opacity: 0.9;
-	text-align: right;
-	position: absolute;
-	right: 0px;
-	top: 0px;
-	overflow: hidden;
+	font-size: min(7vw, 6rem);
+	text-transform: uppercase;
+	text-shadow: -0.3vw -0.3vw 0.5vw #111;
+	margin: 0;
+	text-align: center;
 
-	img {
-		width: 60vw;
-		position: relative;
-		right: -10vw;
-	}
-}
-
-.path {
-	position: absolute;
-
-	img {
-		width: 30vw;
-		position: relative;
-		right: -30vw;
-		top: -5vw;
+	h1 {
+		background-color: #c51a43;
+		color: #fae142;
+		margin: 0px;
 	}
 }
 
 .container {
 	position: relative;
-	margin: 2rem;
+	background-color: $bgr-primary;
 }
 
+section {
+	@extend .dashed;
+
+}
 
 a:visited, a:link {
-	color: white;
+	color: $bgr-link;
+}
+
+.dashed {
+	border-top: 2px solid #fff;
+	border-style: dashed none none none;
 }
 
 .org {
+	margin-bottom: 2rem;
 	text-align: center;
 	z-index: 100;
 	font-size: 2.2vw;
-	text-shadow: -0.1vw -0.1vw #00000050;
 
 	.faculty {
 		text-transform: uppercase;
 	}
-}
-
-.title {
-	font-size: 10vw;
-	margin-left: 2vw;
-	text-transform: uppercase;
-	text-shadow: -0.3vw -0.3vw #deae10;
-
-	h1, h2 {
-		margin: 0px;
-	}
-
-	h2 {
-		line-height: 15vw;
-	}
 
 	.date {
 		font-size: 4vw;
-		text-shadow: -0.1vw -0.1vw #deae10;
 		margin-left: 1vw;
 		font-weight: bold;
 	}
 
 	.links {
-		position: absolute;
-		top: 35vw;
-		left: 32vw;
+		margin-top: 2rem;
 
 		a {
 			img {
-				width: 6vw;
+				width: max(6vw, 2rem);
 			}
 			
 			text-decoration: none !important;
@@ -121,30 +138,30 @@ a:visited, a:link {
 		}
 
 		.btn {
-			text-shadow: 2px 2px #000000;
-			background: $bgr-dark;
+			color: $content-color;
+			background: $bgr-second;
 			display: inline-block;
 			position: relative;
 			bottom: 1.8vw;
 			text-align: center;
-			font-size: 2.2vw;
+			font-size: max(2.2vw, 1rem);
 			padding-left: 10px;
 			padding-right: 10px;
 			padding-top: 10px;
 			margin-left: 10px;
 			padding-bottom: 10px;
 			text-decoration: none;
-			box-shadow: inset -4px -4px 0px 0px #122946;
+			box-shadow: inset -2px -2px 0px 0px #111;
 		  }
 		  
 		  .btn:hover,
 		  .btn:focus {
-			background: #356480;
-			box-shadow: inset -4px -4px 0px 0px $bgr-dark;
+			background: $bgr-tertiary;
+			box-shadow: inset -2px -2px 0px 0px $bgr-dark;
 		  }
 		  
 		  .btn:active {
-			box-shadow: inset 4px 4px 0px 0px $bgr-dark;
+			box-shadow: inset 2px 2px 0px 0px $bgr-dark;
 		  }
 		  
 		  .btn:before,
@@ -157,17 +174,17 @@ a:visited, a:link {
 		  }
 		  
 		  .btn:before {
-			top: -4px;
+			top: -3px;
 			left: 0;
-			border-top: 4px black solid;
-			border-bottom: 4px black solid;
+			border-top: 3px #333 solid;
+			border-bottom: 3px #333 solid;
 		  }
 		  
 		  .btn:after {
-			left: -4px;
+			left: -3px;
 			top: 0;
-			border-left: 4px black solid;
-			border-right: 4px black solid;
+			border-left: 3px #333 solid;
+			border-right: 3px #333 solid;
 		  }
 		  
 
@@ -190,27 +207,13 @@ a:visited, a:link {
 	}
 }
 
-.dashed {
-	border-top: 2px solid #D2D6DC;
-	border-style: dashed none none none;
-}
-
-.odd {
-	background-color: $bgr-brighter !important;
-}
-
 .content {
 	position: relative;
 	z-index: 100;
 	padding: 10px;
 	font-weight: bold;
 	font-size: 2rem;
-	background-color: $bgr-darker;
 	
-	&.alt {
-		@extend .dashed;
-		background-color: $bgr-brighter;
-	}
 
 	.desc {
 		display: flex;
@@ -226,7 +229,7 @@ a:visited, a:link {
 			margin: 20px;
 			max-width: 700px;
 			font-weight: normal;
-			background-color: $bgr-dark;
+			background-color: $bgr-tertiary;
 		}
 	}
 
@@ -248,13 +251,13 @@ a:visited, a:link {
 		justify-content: center;
 
 		.day {
-			max-width: 500px;
+			width: min(500px, 100vw);
 			padding: 10px;
 			padding-left: 20px;
 			padding-right: 20px;
 			padding-bottom: 20px;
 			margin: 10px;
-			background-color: $bgr-dark;
+			background-color: $bgr-tertiary;
 
 			>h3 {
 				padding-left: 20px;
@@ -280,5 +283,5 @@ a:visited, a:link {
 	font-weight: bold;
 	font-size: 1rem;
 	text-align: center;
-	background-color: $bgr-darker;
+	background-color: $bgr-second;
 }
