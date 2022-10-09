@@ -1,7 +1,7 @@
 
 $bgr-primary: #fae142;
 $bgr-second: #f5db34;
-$bgr-tertiary: #ffed78;
+$bgr-tertiary: #fff29b;
 $bgr-dark: #9d931e;
 $bgr-link: #1e6cc3;
 
@@ -61,9 +61,26 @@ html, body {
 				width: 50vh;
 			}
 		}
-	
+
 		&.x2 {
-			top: 20vh;
+			@media (orientation: portrait) {
+				top: 25vh;
+			}
+			top: -20vh;
+		}
+
+		&.x7 {
+			@media (orientation: landscape) {
+				top: -10vh;
+			}
+			@media (orientation: portrait) {
+				top: 40vh;
+			}
+		}
+
+		&.x2 img {
+			/* too slow :( */
+			/*@extend .glow; */
 		}
 	}
 }
@@ -106,36 +123,23 @@ a:visited, a:link {
 }
 
 .org {
-	margin-bottom: 2rem;
+	margin-bottom: 2vw;
 	text-align: center;
 	z-index: 100;
-	font-size: 2.2vw;
+	font-size: min(2.5rem, 4vw);
 
 	.faculty {
 		text-transform: uppercase;
 	}
 
 	.date {
-		font-size: 4vw;
+		font-size: min(2.2rem, 3vw);
 		margin-left: 1vw;
 		font-weight: bold;
 	}
 
 	.links {
-		margin-top: 2rem;
-
-		a {
-			img {
-				width: max(6vw, 2rem);
-			}
-			
-			text-decoration: none !important;
-			border:0px !important;
-			outline:none;
-			border-width: 0px;
-			outline-width:0px;
-			border-bottom: none;
-		}
+		margin-top: 5vw;
 
 		.btn {
 			color: $content-color;
@@ -144,7 +148,7 @@ a:visited, a:link {
 			position: relative;
 			bottom: 1.8vw;
 			text-align: center;
-			font-size: max(2.2vw, 1rem);
+			font-size: min(5vw, 2.5rem);
 			padding-left: 10px;
 			padding-right: 10px;
 			padding-top: 10px;
@@ -219,7 +223,7 @@ a:visited, a:link {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		font-size: 1.4rem;
+		font-size: min(1.5rem, 4vw);
 		line-height: 2rem;
 
 		>div {
@@ -229,7 +233,7 @@ a:visited, a:link {
 			margin: 20px;
 			max-width: 700px;
 			font-weight: normal;
-			background-color: $bgr-tertiary;
+			@extend .contentBox;
 		}
 	}
 
@@ -242,7 +246,7 @@ a:visited, a:link {
 	}
 
 	.program {
-		font-size: 1.5rem;
+		font-size: min(1.5rem, 4vw);
 		font-weight: normal;
 		display: flex;
 		flex-direction: row;
@@ -257,7 +261,7 @@ a:visited, a:link {
 			padding-right: 20px;
 			padding-bottom: 20px;
 			margin: 10px;
-			background-color: $bgr-tertiary;
+			@extend .contentBox;
 
 			>h3 {
 				padding-left: 20px;
@@ -271,8 +275,24 @@ a:visited, a:link {
 				div:nth-child(2n + 1) {
 					text-align: right;
 					padding-right: 20px;
-					font-size: 1.2rem;
+					font-size: min(1.2rem, 3vw);
 				}
+			}
+		}
+	}
+
+	.timeline {
+		/* not visible for portrait */
+		@media (orientation: portrait) {
+			display: none;
+		}
+
+		@media (orientation: landscape) {
+			padding-top: 2rem;
+			text-align: center;
+
+			img {
+				width: min(80rem, 100%);
 			}
 		}
 	}
@@ -284,4 +304,35 @@ a:visited, a:link {
 	font-size: 1rem;
 	text-align: center;
 	background-color: $bgr-second;
+}
+
+.glow {
+	animation: pulseGlow 5s ease infinite;
+}
+
+.contentBox {
+	background-color: $bgr-tertiary;
+	box-shadow: 1rem 1rem #333333dd;
+}
+
+
+@keyframes pulseGlow {
+	0% {
+		filter: drop-shadow(0px 0px 40px #fff);
+	}
+	40% {
+		filter: drop-shadow(0px 0px 80px #fff);
+	}
+	50% {
+		filter: drop-shadow(0px 0px 40px #fff);
+	}
+	60% {
+		filter: drop-shadow(0px 0px 80px #fff);
+	}
+	80% {
+		filter: drop-shadow(0px 0px 200px #fff);
+	}
+	100% {
+		filter: drop-shadow(0px 0px 40px #fff);
+	}
 }
