@@ -39,15 +39,13 @@ html, body {
 			left: 0px;
 			top: 0px;
 			width: 100%;
-			img {
-				width: 100%;
-			}
 		}
 	
 		position: absolute;
 		left: 0px;
 		bottom: 0vh;
 		overflow:hidden;
+		width: 100%;
 
 		img {
 			width: 100%;
@@ -56,6 +54,7 @@ html, body {
 		&.x1 {
 			left: calc(50% - 25vh);
 			top: 20vh;
+			width: auto;
 	
 			img {
 				width: 50vh;
@@ -76,11 +75,6 @@ html, body {
 			@media (orientation: portrait) {
 				top: 40vh;
 			}
-		}
-
-		&.x2 img {
-			/* too slow :( */
-			/*@extend .glow; */
 		}
 	}
 }
@@ -296,6 +290,83 @@ a:visited, a:link {
 			}
 		}
 	}
+
+
+	.events {
+		align-items: center;
+		display: flex;
+		width: 100%;
+		justify-content: center;
+
+		@mixin mygradient {
+			background: linear-gradient(to right,  $bgr-second 0%,rgba(255,255,255,0) 100%);
+		}
+		
+		$animationSpeed: 30s;
+		$imageNum: 8;
+
+		// Animation
+		@keyframes scroll {
+			0% { transform: translateX(0); }
+			/* this value works and I don't know why ...*/
+			100% { transform: translateX(calc(min(35vh, 35vw) * -17))}
+		}
+		
+		
+		// Styling
+		.slider {
+			background: white;
+			box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+			height: min(35vh, 35vw);
+			margin: auto;
+			overflow:hidden;
+			position: relative;
+			width: 100%;
+			
+			&::before,
+			&::after {
+				@include mygradient;
+				content: "";
+				height: min(35vh, 35vw);
+				position: absolute;
+				width: 20vw;
+				z-index: 2;
+			}
+			
+			&::after {
+				right: 0;
+				top: 0;
+				transform: rotateZ(180deg);
+			}
+		
+			&::before {
+				left: 0;
+				top: 0;
+			}
+			
+			.slide-track {
+				animation: scroll $animationSpeed linear infinite;
+				display: flex;
+				width: calc(250px * 5);
+			}
+			
+			.slide {
+				height: min(35vh, 35vw);
+				> img {
+					height: 100%;
+					border: min(1vh, 1vw) solid $bgr-second;
+				}
+			}
+		}
+	}
+
+	.itchlink {
+		padding: 2rem;
+		text-align: center;
+		font-size: min(1.5rem, 4vw);
+		font-weight: normal;
+	}
+
 }
 
 .footer {
