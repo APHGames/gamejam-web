@@ -15,7 +15,7 @@ let url = isLocaleCS ? URL_CS : URL_EN;
 const i18n = require(path.resolve(__dirname, `i18n/${currentLocale}/code.json`));
 
 const customFields = {
-	copyright: `Copyright © ${new Date().getFullYear()} APHGAMES.CZ`,
+	copyright: `Copyright © ${new Date().getFullYear()} <a href="https://fit.cvut.cz/cs">FIT ČVUT</a>`,
 	description: 'GameJam Web',
 	url,
 	currentLocale,
@@ -76,21 +76,21 @@ const output = {
 			}
 		],
 		colorMode: {
-			defaultMode: 'light',
+			defaultMode: 'dark',
 			 /* I really don't have time to maintain two versions */
 			disableSwitch: true,
 		},
 		image: 'img/oglogo.jpg',
 		prism: {
 			defaultLanguage: 'javascript',
-			theme: require('./src/internals/prism-light'),
-			lightTheme: require('./src/internals/prism-light'),
+			theme: require('./src/internals/prism-dark'),
+			darkTheme: require('./src/internals/prism-dark'),
 		},
 		navbar: {
 			title: ' ',
 			logo: {
-				alt: 'FIT CTU',
-				src: '/img/navbar/logo.svg'
+				alt: 'Grafit Logo',
+				src: '/img/navbar/logo.png'
 			},
 			items: [
 				{
@@ -109,24 +109,6 @@ const output = {
 					to: '/gallery',
 				},
 				{
-					label: i18n['config.archive'].message,
-					position: 'left',
-					items: [
-						{
-							label: 'GameJam 2020',
-							href: 'https://gamejam.aphgames.cz'
-						},
-						{
-							label: 'GameJam Jaro 2022',
-							href: 'https://gamejam.aphgames.cz'
-						},
-						{
-							label: 'GameJam Podzim 2022',
-							href: 'https://gamejam.aphgames.cz'
-						},
-					]
-				},
-				{
 					label: isLocaleCS ?  '🇬🇧' : '🇨🇿',
 					"aria-label": i18n['config.lang'].message,
 					className: 'header-lang-link',
@@ -136,7 +118,7 @@ const output = {
 			]
 		},
 		footer: {
-			copyright: `Copyright ©  ${new Date().getFullYear()} APHGAMES.CZ`,
+			copyright: customFields.copyright
 		},
 	},
 	presets: [

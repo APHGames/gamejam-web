@@ -112,7 +112,7 @@ const Title = () => (
 					},
 					{
 						image: bgr1,
-						translateY: [0, 200],
+						translateY: [0, 110],
 						style: {
 							backgroundSize: 'contain',
 							backgroundPosition: 'bottom center',
@@ -122,7 +122,7 @@ const Title = () => (
 					},
 					{
 						image: bgr1x,
-						translateY: [20, 150],
+						translateY: [5, 150],
 						style: {
 							backgroundSize: 'contain',
 							backgroundPosition: 'bottom center',
