@@ -1,11 +1,8 @@
 import React from 'react';
-import clsx from 'clsx';
-import spinnerStyles from '@site/src/css/spinner.module.scss';
+import * as S from './Loading.styles';
 
-export default function LoadingSpinner() {
-	return (
-		<div className={clsx(spinnerStyles.spinner)}>
-			<div className={clsx(spinnerStyles.loading)} />
-		</div>
-	);
+export default function Loading() {
+	return (<S.Container>
+			<S.Loading/>
+		</S.Container>);
 }

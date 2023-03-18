@@ -1,7 +1,24 @@
 @import "./colors.scss";
-@import "../internals/effects.scss";
+@import "./fonts.scss";
 
 :root[data-theme="dark"] {
+	--transition-bezier: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+	--font-family-base: Verdana, Helvetica, sans-serif;
+	--ifm-code-font-size: #{$font-size-small};
+	--ifm-font-family-base: var(--font-family-base);
+	--ifm-font-family-monospace: "Inconsolata", monospace;
+	--ifm-font-size-base: #{$font-size-small};
+	--ifm-h1-font-size: #{$font-size-xxlarge};
+	--ifm-h2-font-size: #{$font-size-llarge};
+	--ifm-h4-font-size: #{$font-size-large};
+	--ifm-heading-margin-bottom: 1.5rem;
+	--ifm-menu-link-sublist-icon: url("/img/infima/arrow.svg");
+	--ifm-navbar-height: 80px;
+	--ifm-navbar-item-padding-horizontal: 20px;
+	--ifm-paragraph-margin-bottom: 1.25rem;
+	--ifm-table-cell-padding: 0.15rem 1rem;
+
+
 	--ifm-background-color: #{$color-firefly};
 	--ifm-blockquote-color: #{$color-royal};
 	--ifm-code-background: #{$color-rhino-90};
@@ -44,32 +61,6 @@
 	--aa-input-border-color-rgb: 255, 255, 255;
 }
 
-.header-github-link, .header-lang-link, .header-youtube-link {
-	opacity: 0.8;
-
-	&:hover {
-		opacity: 1.0;
-	}
-}
-
-
-.header-github-link:before {
-	background: url('/img/global/github.svg');
-	background-size: 100% 100%;
-	content: "";
-	display: flex;
-	height: 26px;
-	width: 26px;
-}
-
-.header-youtube-link:before {
-	background: url('/img/global/youtube.png');
-	background-size: 100% 100%;
-	content: "";
-	display: flex;
-	height: 26px;
-	width: 26px;
-}
 
 /* Search plugin colors */
 body[data-theme="dark"] {
@@ -100,9 +91,22 @@ body[data-theme="dark"] {
 	}
 }
 
+/* Docaurus overrides */
 html[data-theme="dark"] {
 	.menu__link--active.menu__link--sublist {
 		color: #{$color-white};
+	}
+
+	.menu__link {
+		border-radius: 8px;
+	}
+	
+	.markdown {
+		--ifm-h2-vertical-rhythm-top: 3;
+		--ifm-h3-vertical-rhythm-top: 2;
+		--ifm-heading-vertical-rhythm-top: 2; /* h4 */
+		--ifm-heading-vertical-rhythm-bottom: 0.4;
+		--ifm-table-border-width: 4px;
 	}
 
 	.navbar__brand {
@@ -156,6 +160,18 @@ html[data-theme="dark"] {
 		border-top-color: #{$color-texasrose};
 	}
 
+	#__docusaurus {
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	/* Pagination */
+	.navbar__link,
+	.dropdown__link {
+		font-size: var(--ifm-font-size-base);
+	}
+
 	/* Firefox */
 	* {
 		scrollbar-color: #{$color-royal} #{$color-rhino-90};
@@ -172,5 +188,82 @@ html[data-theme="dark"] {
 
 	::-webkit-scrollbar-corner {
 		background: #{$color-rhino-90} !important;
+	}
+}
+
+/* HEADER */
+.header-github-link, .header-lang-link, .header-youtube-link {
+	opacity: 0.8;
+
+	&:hover {
+		opacity: 1.0;
+	}
+}
+
+
+.header-github-link:before {
+	background: url('/img/global/github.svg');
+	background-size: 100% 100%;
+	content: "";
+	display: flex;
+	height: 26px;
+	width: 26px;
+}
+
+.header-youtube-link:before {
+	background: url('/img/global/youtube.png');
+	background-size: 100% 100%;
+	content: "";
+	display: flex;
+	height: 26px;
+	width: 26px;
+}
+
+/* OTHER OVERRIDES */
+ nav {
+	--ifm-font-size-base: #{$font-size-normal};
+}
+
+canvas {
+	max-width: 100%;
+}
+
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	transition: var(--ifm-transition-fast) ease color;
+}
+
+
+/**
+ *
+ * Custom global styles
+ *
+ **/
+
+/* Firefox */
+* {
+	scrollbar-width: thin;
+}
+
+/* WebKit / Blink */
+::-webkit-scrollbar {
+	width: 7px !important;
+	height: 7px !important;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 0 !important;
+}
+
+/* There are too many links*/
+@media (max-width: 1100px) {
+	.navbar__item, .navbar__item > .navbar__link {
+		font-size: 0.9rem;
 	}
 }

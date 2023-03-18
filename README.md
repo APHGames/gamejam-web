@@ -11,12 +11,11 @@
 
 ```
 project
-│   │   blog                // place for a blog... not used right now
 │   │   docs                // markdown documents with instructions, tutorials, guides etc.
+|   |   i18n                // translations
 │   │   plugins             // some plugins
 │   │   src                 // React sources with custom components and themes
 │   │   static              // static files (slides and examples are downloaded into this folder) 
-│   │   types               // additional Typescript declarations
 │
 │   CHANGELOG.md            // changelog
 │   package.json            // npm scripts and dependencies

@@ -148,7 +148,7 @@ const output = {
 					showReadingTime: true
 				},
 				theme: {
-					customCss: require.resolve('./src/css/global.scss')
+					customCss: require.resolve('./src/internals/docusaurus.scss')
 				},
 			},
 		],
