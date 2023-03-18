@@ -1,4 +1,14 @@
 module.exports = {
+	cornLight: '#f4f3a8',
+	corn: '#efee82',
+	cornDark: '#a7a75b',
+	texasroseLight: '#f9cf7e',
+	texasrose: '#f7bb46',
+	texasroseDark: '#ad8331',
+	fireflyLight: '#566d74',
+	firefly: '#0d2e38',
+	fireflyDark: '#092027',
+
 	midnight: '#121824',
 	midnightLight: '#3a414e',
 	midnightDark: '#03060c',
