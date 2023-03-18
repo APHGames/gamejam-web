@@ -25,7 +25,7 @@
 .section + .section {
 	border-style: dashed none none;
 	border-top-width: 0.15rem;
-	border-top-color: #FFFFFF44;
+	border-top-color: #{$color-texasrose};
 }
 
 .section__title {

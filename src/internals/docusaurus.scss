@@ -2,32 +2,39 @@
 @import "../internals/effects.scss";
 
 :root[data-theme="light"] {
-	--ifm-background-color: #{$color-midnight};
+	--ifm-background-color: #{$color-white};
 	--ifm-blockquote-color: #{$color-royal};
 	--ifm-code-background: #{$color-rhino-90};
-	--ifm-code-color: #{$color-white};
+	--ifm-code-color: #{$color-rhino-100};
 	--ifm-color-emphasis-300: #{$color-royal};
-	--ifm-color-primary: #{$color-lemon};
-	--ifm-color-primary-dark: #{$color-lemon-dark};
-	--ifm-color-primary-darker: #{$color-lemon-dark};
-	--ifm-color-primary-darkest: #{$color-lemon-dark};
-	--ifm-color-primary-light: #{$color-lemon};
-	--ifm-color-primary-lighter: #{$color-lemon-light};
-	--ifm-color-primary-lightest: #{$color-lemon-light};
+	--ifm-color-primary: #{$color-midnight};
+	--ifm-color-primary-dark: #{$color-midnight-dark};
+	--ifm-color-primary-darker: #{$color-midnight-dark};
+	--ifm-color-primary-darkest: #{$color-midnight-dark};
+	--ifm-color-primary-light: #{$color-rhino-100};
+	--ifm-color-primary-lighter: #{$color-rhino-80};
+	--ifm-color-primary-lightest: #{$color-rhino-60};
 	--ifm-color-info: #{$color-azure};
 	--ifm-color-success: #{$color-emerald};
-	--ifm-color-warning: #{$color-lemon};
-	--ifm-dropdown-background-color: #{$color-midnight};
-	--ifm-font-color-base: #{$color-white};
+	--ifm-color-warning: #{$color-goldenrod};
+	--ifm-dropdown-background-color: #{$color-azure};
+	--ifm-font-color-base: #{$color-rhino-100};
 	--ifm-link-color: #{$color-royal-light};
-	--ifm-navbar-background-color: #{$color-midnight};
-	--ifm-navbar-shadow: 0 1px 0 0 #{$color-white-10};
+	--ifm-navbar-background-color: #{$color-firefly};
+	--ifm-navbar-shadow: 0 1px 0 0 #{$color-firefly-light};
 	--ifm-pre-background: #{$color-rhino-100};
 	--ifm-toc-border-color: #{$color-white-10};
 	--ifm-menu-color-background-active: #{$color-rhino-80};
 	--ifm-menu-color-active: #{$color-white};
-	--ifm-footer-background-color: #{$color-midnight};
+	--ifm-footer-background-color: #{$color-firefly-light};
 	--ifm-footer-padding-vertical: 20px;
+
+	--ifm-footer-color: #{$color-midnight-dark};
+	--ifm-navbar-link-color: #{$color-white};
+	--ifm-navbar-link-hover-color: #{$color-texasrose};
+
+	--aa-primary-color-rgb: 255, 255, 255;
+	--aa-input-border-color-rgb: 255, 255, 255;
 }
 
 .header-github-link, .header-lang-link, .header-youtube-link {
@@ -60,6 +67,7 @@
 /* Search plugin colors */
 body[data-theme="light"] {
 	.aa-DetachedSearchButton,
+	.aa-DetachedCancelButton,
 	.aa-Autocomplete,
 	.aa-DetachedSearchButtonIcon,
 	.aa-DetachedFormContainer,
@@ -69,17 +77,23 @@ body[data-theme="light"] {
 	.aa-Input,
 	#autocomplete-0-input,
 	#autocomplete-0-label {
-		color: #{$color-rhino-10} !important;
+		color: #{$color-white} !important;
+	}
+
+	.aa-InputWrapper {
+		::placeholder {
+			color: #{$color-rhino-40};
+		  }
 	}
 
 	.aa-DetachedSearchButton,
 	.aa-Form,
 	.aa-DetachedFormContainer {
-		background-color: #{$color-rhino-100} !important;
+		background-color: #{$color-firefly} !important;
 	}
 }
 
-html[data-theme="dark"] {
+html[data-theme="light"] {
 	.menu__link--active.menu__link--sublist {
 		color: var(--ifm-color-primary);
 	}
@@ -117,31 +131,15 @@ html[data-theme="dark"] {
 		--ifm-alert-border-color: #{$color-lemon};
 	}
 
-	main {
-		background-color: $color-midnight-dark;
-	}
-
-	.main-wrapper {
-		@include dottedBackground;
-	}
-
 	main article header h2 a {
 		color: $color-rhino-5;
-	}
-
-	.menu {
-		@include patternBackground;
-	}
-
-	.footer, .navbar {
-		@include patternBackground;
 	}
 
 	.footer {
 		border-style: dashed none none;
 		border-top-width: 0.15rem;
-		border-top-color: #FFFFFF44;
-		}
+		border-top-color: #{$color-texasrose};
+	}
 
 	/* Firefox */
 	* {

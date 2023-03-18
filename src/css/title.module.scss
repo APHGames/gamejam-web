@@ -21,7 +21,6 @@
 	text-transform: uppercase;
 	font-size: min($font-size-xxlarge, 8vw);
 	text-align: center;
-	@extend .chromatic;
 }
 
 .title__logo {
@@ -37,13 +36,4 @@
 	.title__section {
 		background-position-y: 60vw;
 	}
-}
-
-.svgGlow {
-	animation: pulseGlow 5s ease infinite;
-}
-
-.chromatic {
-	transition: text-shadow 2s ease;
-	animation: chromaticMove 2.5s ease infinite, pulse 6s ease infinite;
 }
