@@ -3,9 +3,9 @@
 
 # Production
 /build
-/dist
 
 # Generated files
+.docusaurus
 .cache-loader
 .cache/
 .parcel-cache/
@@ -21,4 +21,8 @@ npm-debug.log*
 
 /.idea/
 .log
+src/css/infima.css
 .ignore
+static/slides/
+static/examples/
+static/tiscali.json

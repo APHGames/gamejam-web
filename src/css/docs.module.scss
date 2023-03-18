@@ -1,0 +1,74 @@
+@import "./variables.scss";
+@import "../internals/colors.scss";
+
+.colors {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	column-gap: 10px;
+	row-gap: 10px;
+
+	&.smaller {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+		&.gradients > div > div {
+			@media screen and (max-width: 500px) and (orientation: portrait) {
+				height: 80px;
+			}
+		}
+
+
+	> div {
+		text-align: center;
+		> :nth-child(1) {
+			height: 40px;
+			line-height: 40px;
+		}
+	}
+}
+
+.figurelistsm {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	img {
+		width: 100%;
+	}
+	> div {
+		text-align: center;
+		min-width: 50%;
+	}
+}
+
+.figurelist {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	img {
+		width: 100%;
+	}
+	> div {
+		text-align: center;
+		min-width: 33.33%;
+	}
+}
+
+.figure {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+
+	img {
+		object-fit: contain;
+	}
+
+	img.fill {
+		width: 100%;
+	}
+}
