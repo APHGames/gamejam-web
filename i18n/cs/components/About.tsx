@@ -1,10 +1,7 @@
-import clsx from 'clsx';
 import React from 'react';
-import sectionStyles from '@site/src/css/section.module.scss';
-import contentStyles from '@site/src/css/content.module.scss';
-import * as S from '@site/src/pages/index.styles';
+import * as S from '@site/src/internals/styles';
 
-export default () => (
+export const About = () => (
 	<S.Section>
 		<S.SectionContainer>
 			<S.CardContainer>
@@ -22,3 +19,5 @@ export default () => (
 		</S.SectionContainer>
 	</S.Section>
 );
+
+export default About;

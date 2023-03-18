@@ -1,7 +1,7 @@
 import React from 'react';
-import * as S from './Loading.styles';
+import * as S from '../loading/Loading.styles';
 
-export default function Loading() {
+export const Loading = () => {
 	return (<S.Container>
 			<S.Loading/>
 		</S.Container>);

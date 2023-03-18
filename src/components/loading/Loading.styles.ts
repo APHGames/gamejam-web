@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import colors from '../internals/colors';
+import colors from '../../internals/colors';
 
 const spinner = keyframes`
 	0% {
