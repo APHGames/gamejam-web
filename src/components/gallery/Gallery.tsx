@@ -5,6 +5,42 @@ import Layout from '@theme/Layout';
 
 import * as S from '@site/src/internals/styles';
 
+export const GameJam1 = () => {
+	return (
+		<S.Section>
+			<S.SectionContainer>
+				<S.Vertical>
+					<h3>GameJam FIT 2020</h3>
+					<h4>mojo</h4>
+				</S.Vertical>
+			</S.SectionContainer>
+		</S.Section>
+	)
+}
+
+export const GameJam2 = () => {
+	return (
+		<S.Section>
+			<S.SectionContainer>
+				<h3>GameJam FIT jaro 2022</h3>
+			</S.SectionContainer>
+		</S.Section>
+	)
+}
+
+export const GameJam3 = () => {
+	return (
+		<S.Section>
+			<S.SectionContainer>
+				<S.Vertical>
+					<h3>GameJam FIT podzim 2023</h3>
+					<h4>mojo</h4>
+				</S.Vertical>
+			</S.SectionContainer>
+		</S.Section>
+	)
+}
+
 export const Gallery = () => {
 	const { siteConfig } = useDocusaurusContext();
 	const context = useDocusaurusContext();
@@ -22,6 +58,9 @@ export const Gallery = () => {
 							Galerie je stále v přípravě. Prozatím se můžete podívat na:
 							<ul>
 								<li>
+									<a href="https://drive.google.com/drive/folders/1-aVV-IfzPswrAmo6tzO_fSufTB4WgGfv">Fotografie z GameJamu 2020</a>
+								</li>
+								<li>
 									<a href="https://photos.google.com/share/AF1QipNYU6TTxZWClr2fcjKwNhVXlURpNkUXj7N7hh-eiwmdUTEh2H8_R8taaW1TV5FZFA?key=d193MHZyMXh0TDhPNVBOU2NDaVRocjlLWE1kWmZ3">Fotografie z GameJamu 2022.1</a>
 								</li>
 								<li>
@@ -37,6 +76,9 @@ export const Gallery = () => {
 						</S.Frame>
 					</S.SectionContainer>
 				</S.Section>
+				<GameJam1 />
+				<GameJam2 />
+				<GameJam3 />
 			</main>
 		</Layout>
 	);

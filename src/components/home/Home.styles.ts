@@ -12,18 +12,20 @@ export * from '../../internals/styles';
 export const Parallax = styled(S.Section)`
 	width: 100%;
 	height: calc(100vh - var(--ifm-navbar-height));
+	position: relative;
 `;
 
-export const Overlay = styled.div`
+
+export const Overlay = styled.div<{$isMobile: boolean }>`
 	width: 100%;
 	height: calc(100vh - var(--ifm-navbar-height));
-	background-image: url(${noise});
+	background-image: ${p => p.$isMobile ? `unset` : `background-image: url(${noise})`};
 	background-repeat: repeat repeat;
-	position: absolute;
+	position: relative;
 `;
 
 export const Title = styled.div`
-	position: absolute;
+	position: sticky;
 	bottom: 0;
 	width: 100%;
 	opacity: 0.9;
@@ -37,6 +39,12 @@ export const Title = styled.div`
 	font-weight: 800;
 	background-color: ${colors.firefly};
 	color: ${colors.texasroseLight};
+`;
+
+/* due to weird stickiness of the GAMEJAM title (it goes beyond the parent container, 
+	sponsors need to be padded from the top) */
+export const Sponsors = styled(S.Section)`
+	padding-top: min(12vw, 6rem);
 `;
 
 export const ParallaxBanner = styled(Banner)`
@@ -61,6 +69,8 @@ export const Programme = styled.div`
 	display: flex;
 	flex-direction: row;
 	gap: 16px;
+	flex-wrap: wrap;
+	justify-content: center;
 
 	@media (orientation: portrait) {
 		flex-direction: column;
@@ -71,13 +81,12 @@ export const Agenda = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 3fr;
 	gap: 20px;
-	align-items: center;
-
-	> :nth-child(2n+1) {
+	align-items: cen		font-size: ${fontSizeSmall};
+ild(2n+1) {
 		text-align: right;
 	}
 
-	> :nth-child(2n) {
-		font-size: ${fontSizeSmall};
+	> :n		font-size:12px;
+;
 	}
 `;

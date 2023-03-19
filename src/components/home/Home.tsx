@@ -22,6 +22,8 @@ import PartnersWarhorse from '../../../static/img/pages/index/sponsors/partners_
 import colors from '../../internals/colors';
 
 import Photo from '../../../static/img/pages/index/photo.jpg';
+import useDevice from '../../hooks/useDevice';
+
 
 // TODO!!! Welcome does not work for build.. it corrupts the internal/styles.ts
 const Welcome = () => (
@@ -60,7 +62,7 @@ const Programme = () => {
 								<S.Highlight>Začátek programování</S.Highlight>
 
 								<div>17:30</div>
-								<div>Networking a rozbor minulých prací</div>
+								<div>Networking a rozbor minulých her</div>
 
 								<div>20:00</div>
 								<div>Zvláštní režim budovy</div>
@@ -95,7 +97,7 @@ const Programme = () => {
 								<S.Highlight>Konec programování</S.Highlight>
 
 								<div>13:30</div>
-								<div>Prezentace prací</div>
+								<div>Prezentace her</div>
 
 								<div>16:00</div>
 								<div>Vyhlášení vítězů</div>
@@ -113,14 +115,14 @@ const Programme = () => {
 
 const Companies = () => {
 	return (
-		<S.Section>
+		<S.Sponsors>
 			<S.Logos>
 				<LogoFit />
 				<LogoGrafit />
 				<LogoAPH />
 				<LogoSage />
 			</S.Logos>
-	</S.Section>
+	</S.Sponsors>
 	)
 }
 
@@ -150,13 +152,16 @@ export const Home = () => {
 		loading: Loading,
 	});*/
 
-	return (
+	const device = useDevice();
+
+	// we need to wait for device detection 
+	return (device && 
 		<Layout description={siteConfig.customFields.description as string}>
 			<DocusaurusHead>
 				<link rel="canonical" href={siteConfig.url} />
 			</DocusaurusHead>
 			<main>
-				<Parallax />
+				<Parallax isMobile={device === 'mobile'} />
 				<Companies />
 				<Welcome />
 				<Programme />

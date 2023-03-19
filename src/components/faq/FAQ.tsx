@@ -24,11 +24,11 @@ export const Questions = () => (
 				</S.Frame>
 				<S.Frame $width={820}>
 					<h4>Jaké enginy je možno při tvorbě použít?</h4>
-					<p>Jakékoliv, pokud budou splněny podmínky v pravidlech ohledně spuštění na cílové platformě.</p>
+					<p>Jakékoliv, pokud budou splněny podmínky v pravidlech ohledně spuštění na cílové platformě. Pokud se rozhodnete použít Unreal engine, mějte na paměti, že s ním během GameJamu byla historicky řada problémů (kolaborace, build time,...)</p>
 				</S.Frame>
 				<S.Frame $width={820}>
-					<h4>Můžu cílovou hru vytvářet např. v DOSu?</h4>
-					<p>Pokud je hra vytvářená pro platformu, která není kompatibilní s MS Windows, ale existuje na ní zdarma dostupný emulátor, je možné zvolit i tento postup. Doporučili bychom ale takový případ konzultovat s porotou.</p>
+					<h4>Můžu hru z důvodu punkového nadšenectví vytvářet např. v DOSu či pro Commodore 64?</h4>
+					<p>Pokud je hra vytvářená pro platformu, která není kompatibilní s MS Windows, ale existuje pro ni zdarma dostupný a snadno instalovatelný emulátor, je možné zvolit i tento postup. Doporučili bychom ale takový případ konzultovat s porotou.</p>
 				</S.Frame>
 				<S.Frame $width={820}>
 					<h4>Je nutné využít všechny ingredience?</h4>

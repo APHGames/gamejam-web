@@ -15,7 +15,7 @@ let url = isLocaleCS ? URL_CS : URL_EN;
 const i18n = require(path.resolve(__dirname, `i18n/${currentLocale}/code.json`));
 
 const customFields = {
-	copyright: `Copyright © ${new Date().getFullYear()} <a href="https://fit.cvut.cz/cs">FIT ČVUT</a>`,
+	copyright: `Copyright © ${new Date().getFullYear()} <a href="https://aphgames.cz">APHGAMES.CZ</a>`,
 	description: 'Velikonoční GameJam na Fakultě informačních technologií ČVUT',
 	url,
 	currentLocale,
@@ -25,7 +25,7 @@ const customFields = {
 const output = {
 	title: i18n['config.title'].message,
 	url: url,
-	baseUrl: '/',
+	baseUrl: '/test/',
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'throw',
 	favicon: 'img/favicon.png',
@@ -108,6 +108,11 @@ const output = {
 					position: 'left',
 					to: '/gallery',
 				},
+				{
+					label: ' ',
+					className: 'header-discord-link',
+					position: 'right',
+					href: 'https://discord.com/invite/qDZJ8QM4mz',	}
 				/*{
 					label: isLocaleCS ?  '🇬🇧' : '🇨🇿',
 					"aria-label": i18n['config.lang'].message,

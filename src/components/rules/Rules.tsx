@@ -26,14 +26,14 @@ export const MainRules = () => (
 						<li>Vývoj hry musí probíhat pouze během stanovené doby. V případě pozdního odevzdání bude daný tým vyjmut z hodnocení porotou, bude však mít stále možnost prototyp hry odprezentovat.</li>
 						<li>Programy třetích stran pro vývoj her a herních assetů je možno použít jen pokud má účastník licenci pro jejich použití.</li>
 						<li>Je možno použít pouze ty assety, které jsou veřejně přístupné (tedy assety pod licencemi public domain, MIT, LGPL, CC, atp.) Není možné využít placené assety ani assety vytvořené před začátkem akce. Toto se týká i knihoven.</li>
-						<li>Výsledná hra je autorským dílem týmu a fakultě FIT ČVUT nevznikají žádná autorská práva.</li>
+						<li>Výsledná hra je autorským dílem týmu a Fakultě informačních technologií ČVUT nevznikají žádná autorská práva.</li>
 					</ul>
 					<h3>Pravidla pro odevzdávání</h3>
 					<ul>
 						<li>Hra musí být odevzdaná na platformě itch.io. Odkaz na konkrétní stránku bude zveřejněn před začátkem akce.</li>
 						<li>Autoři hry musí mít práva či licence na všechny části hry, aby splnili licenční podmínky pro veřejné vystavení na platformě itch.io.</li>
 						<li>Hra musí být odevzdaná v termínu, který je vypsán v programu akce.</li>
-						<li>Odevzdaná hra musí obsahovat binární soubory hry, několik vhodných screenshotů a krátký popis.</li>
+						<li>Odevzdaná hra musí obsahovat binární soubory hry, několik vhodných screenshotů a krátký popis. Trailer či záznam z gameplaye je vřele vítán.</li>
 					</ul>
 					<h3>Pravidla pro hodnocení</h3>
 					<ul>

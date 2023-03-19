@@ -203,8 +203,8 @@ html[data-theme="dark"] {
 }
 
 
-.header-github-link:before {
-	background: url('/img/global/github.svg');
+.header-discord-link:before {
+	background: url('/img/global/discord.png');
 	background-size: 100% 100%;
 	content: "";
 	display: flex;
@@ -212,14 +212,6 @@ html[data-theme="dark"] {
 	width: 26px;
 }
 
-.header-youtube-link:before {
-	background: url('/img/global/youtube.png');
-	background-size: 100% 100%;
-	content: "";
-	display: flex;
-	height: 26px;
-	width: 26px;
-}
 
 /* OTHER OVERRIDES */
  nav {
@@ -231,6 +223,7 @@ canvas {
 }
 
 
+/* due to parallax issues */
 html,
 body {
 	height: 100%;
