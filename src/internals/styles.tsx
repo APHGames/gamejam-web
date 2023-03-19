@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import colors from './colors';
 import frame from '../../static/img/global/frame.png';
 import parchment from '../../static/img/global/parchment.png';
@@ -6,8 +6,8 @@ import parchment from '../../static/img/global/parchment.png';
 import React from 'react';
 
 // TODO keep in sync with fonts.scss
-export const fontSizeSmall = 'clamp(10px, 2vw, 16px)';
-export const fontSizeNormal = 'clamp(14px, 2vw, 20px)';
+export const fontSizeSmall = 'clamp(14px, 2vw, 18px)';
+export const fontSizeNormal = 'clamp(16px, 2vw, 20px)';
 export const fontSizeLarge = 'clamp(18px, 2vw, 24px)';
 export const fontSizeLlarge = 'clamp(22px, 2vw, 32px)';
 export const fontSizeXlarge = 'clamp(30px, 2vw, 46px)';
@@ -45,6 +45,7 @@ export const SectionContainer = styled.div`
 `;
 
 export const Vertical = styled.div`
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -52,8 +53,12 @@ export const Vertical = styled.div`
 `;
 
 export const Horizontal = styled.div`
+	width: 100%;
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 24px;
 `;
 
 export const CardContainer = styled.div`
@@ -63,6 +68,7 @@ export const CardContainer = styled.div`
 	flex-wrap: wrap;
 	justify-content: center;
 	width: 100%;
+	position: relative;
 `;
 
 export const Card = styled.div`
@@ -82,7 +88,7 @@ const ParchmentWrapper = styled.div`
 	border-image-outset: 0px 0px 0px 0px;
 	border-image-repeat: repeat repeat;
 	border-image-source: url(${parchment});
-	width: 800px;
+	width: min(800px, 100%);
 `;
 
 const ParchmentStyled = styled(Card)`
@@ -91,6 +97,10 @@ const ParchmentStyled = styled(Card)`
 
 	&&, > * {
 		color: ${colors.rhino100};
+
+		& a {
+			color: ${colors.azureDark};
+		}
 	}
 `;
 
@@ -103,7 +113,9 @@ export const Parchment = (props) => {
 };
 
 export const Frame = styled.div<{
-	$width?: number;
+	$width?: string;
+	$color?: string;
+	$pictureMode?: boolean;
 }>`
 	border: 32px solid transparent;
 	border-image-slice: 150 186 159 156;
@@ -111,19 +123,42 @@ export const Frame = styled.div<{
 	border-image-outset: 0px 0px 0px 0px;
 	border-image-repeat: repeat repeat;
 	border-image-source: url(${frame});
-	width: ${p => p.$width ?? '520'}px;
+	width: ${p => p.$width ?? '520'};
 	margin: 10px;
 
-	background-color: ${colors.texasrose};
+	background-color: ${(p) => p.$color ?? colors.texasrose};
 	
+	${(p => p.$pictureMode && css`
+		background-color: ${colors.midnight};
+		border-width: 15px;
+
+		> img {
+			width: 100%;
+			height: auto;
+		}
+	`
+	)}
+
 	&&, > *:not(a) {
 		color: ${colors.rhino100};
 	}
 
-	border-image-outset: 12px;;
+	border-image-outset: 12px;
+`;
+
+export const CarouselItem = styled.div`
+	margin: 10px;
+	width: 500px;
+`;
+
+export const Space = styled.div<{$top?: number; $bottom?: number}>`
+	${(p => p.$top ? `margin-top: ${p.$top}px` : '')}
+	${(p => p.$bottom ? `margin-bottom: ${p.$bottom}px` : '')}
+
 `;
 
 export const Highlight = styled.span`
 	color: ${colors.azureDark};
 	font-weight: 600;
 `;
+

@@ -25,7 +25,7 @@ const customFields = {
 const output = {
 	title: i18n['config.title'].message,
 	url: url,
-	baseUrl: '/test/',
+	baseUrl: '/',
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'throw',
 	favicon: 'img/favicon.png',
@@ -80,7 +80,7 @@ const output = {
 			 /* I really don't have time to maintain two versions */
 			disableSwitch: true,
 		},
-		image: 'img/oglogo.jpg',
+		image: 'img/oglogo4.jpg',
 		prism: {
 			defaultLanguage: 'javascript',
 			theme: require('./src/internals/prism-dark'),

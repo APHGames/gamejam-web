@@ -12,6 +12,7 @@ import bgr5 from '../../../static/img/pages/index/parallax/bgr5.png';
 import bgr6 from '../../../static/img/pages/index/parallax/bgr6.png';
 import bgr7 from '../../../static/img/pages/index/parallax/bgr7.png';
 import mobileBgr from '../../../static/img/pages/index/parallax/mobile.png';
+import { Countdown } from './Countdown';
 
 
 export const Parallax = ( { isMobile }) => (
@@ -149,6 +150,7 @@ export const Parallax = ( { isMobile }) => (
 		{/* Overlay must be here even for mobile version, as it 
 		  keep the title sticky from the bottom */}
 		<S.Overlay $isMobile={isMobile} />
+		<Countdown />
 		<S.Title>GameJam</S.Title>
 	</S.Parallax>
 );

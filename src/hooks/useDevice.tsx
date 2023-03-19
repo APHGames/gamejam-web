@@ -1,36 +1,36 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from 'react'
 
-const useDevice = () => {
-  const [deviceType, setDeviceType] = useState(null);
+export const useDeviceInfo = () => {
 
-  useEffect(() => {
-    let hasTouchScreen = false;
-    if ("maxTouchPoints" in (navigator as any)) {
-      hasTouchScreen = navigator.maxTouchPoints > 0;
-    } else if ("msMaxTouchPoints" in navigator) {
-      hasTouchScreen = navigator.msMaxTouchPoints > 0;
-    } else {
-      const mQ = window.matchMedia && matchMedia("(pointer:coarse)");
-      if (mQ && mQ.media === "(pointer:coarse)") {
-        hasTouchScreen = !!mQ.matches;
-      } else if ("orientation" in window) {
-        hasTouchScreen = true; // deprecated, but good fallback
-      } else {
-        // Only as a last resort, fall back to user agent sniffing
-        var UA = navigator.userAgent;
-        hasTouchScreen =
-          /\b(BlackBerry|webOS|iPhone|IEMobile)\b/i.test(UA) ||
-          /\b(Android|Windows Phone|iPad|iPod)\b/i.test(UA);
-      }
+    // Change the value as per your config
+    const SCREEN_SIZES = {
+        MOBILE_WIDTH: 800, // For mobile devices
+        TABLET_WIDTH: 900, // For tablet devices
     }
-    if (hasTouchScreen) {
-      setDeviceType("mobile");
-    } else {
-      setDeviceType("desktop");
-    }
-  }, []);
 
-  return deviceType;
-};
+    const { MOBILE_WIDTH, TABLET_WIDTH } = SCREEN_SIZES
 
-export default useDevice;
+    const [object, setObject] = useState(null);
+
+    const handleResize = useCallback(() => {
+        const width = document.documentElement.clientWidth || window.innerWidth;
+        const height = document.documentElement.clientHeight || window.innerHeight
+        setObject({
+            width: width,
+            height: height,
+            isMobile: width <= MOBILE_WIDTH,
+            isTablet: width > MOBILE_WIDTH && width <= TABLET_WIDTH,
+            isDesktop: width > TABLET_WIDTH
+        })
+    }, [MOBILE_WIDTH, TABLET_WIDTH])
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize)
+        handleResize()
+        return () => { window.removeEventListener('resize', handleResize) }
+    }, [handleResize])
+
+    return object
+}
+
+export default useDeviceInfo;
