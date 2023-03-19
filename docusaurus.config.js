@@ -16,7 +16,7 @@ const i18n = require(path.resolve(__dirname, `i18n/${currentLocale}/code.json`))
 
 const customFields = {
 	copyright: `Copyright © ${new Date().getFullYear()} <a href="https://fit.cvut.cz/cs">FIT ČVUT</a>`,
-	description: 'GameJam Web',
+	description: 'Velikonoční GameJam na Fakultě informačních technologií ČVUT',
 	url,
 	currentLocale,
 }

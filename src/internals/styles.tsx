@@ -48,6 +48,7 @@ export const Vertical = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 16px;
 `;
 
 export const Horizontal = styled.div`
@@ -75,6 +76,7 @@ export const Card = styled.div`
 
 const ParchmentWrapper = styled.div`
 	border: 20px solid transparent;
+	padding-right: 20px;
 	border-image-slice: 220 fill;
 	border-image-width: 46px;
 	border-image-outset: 0px 0px 0px 0px;
@@ -114,7 +116,7 @@ export const Frame = styled.div<{
 
 	background-color: ${colors.texasrose};
 	
-	&&, > * {
+	&&, > *:not(a) {
 		color: ${colors.rhino100};
 	}
 
