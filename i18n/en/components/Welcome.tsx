@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from '@site/src/internals/styles';
 
-export const About = () => (
+export const Welcome = () => (
 	<S.Section>
 		<S.SectionContainer>
 			<S.CardContainer>
@@ -20,4 +20,4 @@ export const About = () => (
 	</S.Section>
 );
 
-export default About;
+export default Welcome;

@@ -1,7 +1,8 @@
+import { fontSizeSmall } from './../../internals/styles';
 import styled from 'styled-components';
 import { ParallaxBanner as Banner } from 'react-scroll-parallax';
 
-import noise from '../../../static/img/pages/index/noise.png';
+import noise from '../../../static/img/global/noise.png';
 import colors from '../../internals/colors';
 import * as S from '../../internals/styles';
 
@@ -9,7 +10,7 @@ export * from '../../internals/styles';
 
 export const Parallax = styled(S.Section)`
 	width: 100%;
-	height: 100vh;
+	height: calc(100vh - var(--ifm-navbar-height));
 `;
 
 export const Overlay = styled.div`
@@ -44,5 +45,38 @@ export const ParallaxBanner = styled(Banner)`
 
 	> div {
 		background-repeat: no-repeat !important;
+	}
+`;
+
+export const Logos = styled(S.SectionContainer)`
+	gap: 50px;
+	> svg, > img {
+		width: auto;
+		height: 70px;
+	}
+`;
+
+export const Programme = styled.div`
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+
+	@media (orientation: portrait) {
+		flex-direction: column;
+	}
+`;
+
+export const Agenda = styled.div`
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	gap: 20px;
+	align-items: center;
+
+	> :nth-child(2n+1) {
+		text-align: right;
+	}
+
+	> :nth-child(2n) {
+		font-size: ${fontSizeSmall};
 	}
 `;
