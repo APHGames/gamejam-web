@@ -62,11 +62,13 @@ export const FAQ = () => {
 	const context = useDocusaurusContext();
 
 	return (
-		<Layout description={siteConfig.customFields.description as string}>
+		<Layout description={siteConfig.customFields.description as string} title='Časté otázky a odpovědi'>
 			<DocusaurusHead>
 				<link rel="canonical" href={siteConfig.url} />
 			</DocusaurusHead>
-			<Questions />
+			<main>
+				<Questions />
+			</main>
 		</Layout>
 	);
 };
