@@ -1,6 +1,7 @@
 import React from 'react';
 import { ParallaxProvider } from "react-scroll-parallax";
 import * as S from './Home.styles';
+import { isMobile } from 'react-device-detect';
 
 import bgr1 from '../../../static/img/pages/index/parallax/bgr1.png';
 import bgr1x from '../../../static/img/pages/index/parallax/bgr1x.png';
@@ -26,6 +27,7 @@ export const Parallax = () => (
 						},
 						shouldAlwaysCompleteAnimation: true,
 						expanded: false,
+						disabled: isMobile,
 					},
 					{
 						image: bgr6,
@@ -36,6 +38,7 @@ export const Parallax = () => (
 							backgroundPosition: 'bottom center',
 						},
 						expanded: false,
+						disabled: isMobile,
 					},
 					{
 						image: bgr5,
@@ -46,6 +49,7 @@ export const Parallax = () => (
 						},
 						shouldAlwaysCompleteAnimation: true,
 						expanded: false,
+						disabled: isMobile,
 					},
 					{
 						image: bgr4,
@@ -56,6 +60,7 @@ export const Parallax = () => (
 						},
 						shouldAlwaysCompleteAnimation: false,
 						expanded: false,
+						disabled: isMobile,
 					},
 					{
 						image: bgr4x,
@@ -66,6 +71,7 @@ export const Parallax = () => (
 						},
 						shouldAlwaysCompleteAnimation: true,
 						expanded: false,
+						disabled: isMobile,
 					},
 					{
 						image: bgr3,
@@ -76,6 +82,7 @@ export const Parallax = () => (
 						},
 						shouldAlwaysCompleteAnimation: true,
 						expanded: false,
+						disabled: isMobile,
 					},
 					{
 						image: bgr2,
@@ -86,6 +93,7 @@ export const Parallax = () => (
 						},
 						shouldAlwaysCompleteAnimation: true,
 						expanded: false,
+						disabled: isMobile,
 					},
 					{
 						image: bgr1,
