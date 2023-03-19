@@ -54,7 +54,7 @@
 	--ifm-menu-color: #{$color-white};
 	--ifm-menu-color-background-active: #{$color-rhino-80};
 	--ifm-menu-color-active: #{$color-white};
-	--ifm-footer-background-color: #{$color-firefly-light};
+	--ifm-footer-background-color: #{$color-firefly-dark};
 	--ifm-footer-padding-vertical: 20px;
 
 	--ifm-footer-color: #{$color-white};
@@ -159,7 +159,7 @@ html[data-theme="dark"] {
 	}
 
 	.footer {
-		--ifm-link-color: #{$color-azure-dark};
+		--ifm-link-color: #{$color-azure-light};
 	}
 
 	#__docusaurus {

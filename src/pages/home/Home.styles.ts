@@ -5,6 +5,7 @@ import { ParallaxBanner as Banner } from 'react-scroll-parallax';
 import noise from '../../../static/img/global/noise.png';
 import colors from '../../internals/colors';
 import * as S from '../../internals/styles';
+import { SectionContainer } from '../../internals/styles';
 
 export * from '../../internals/styles';
 

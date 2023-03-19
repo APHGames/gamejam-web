@@ -9,6 +9,11 @@ declare module '*.png' {
 	export default img;
 }
 
+declare module '*.jpg' {
+	const img: string;
+	export default img;
+}
+
 declare module '*.module.scss' {
 	const classes: { readonly [key: string]: string };
 	export default classes;

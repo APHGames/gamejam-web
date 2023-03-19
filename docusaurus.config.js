@@ -94,27 +94,27 @@ const output = {
 			},
 			items: [
 				{
-					label: 'todo',
-					position: 'left',
-					to: '/docs/materials/intro',
-				},
-				{
 					label: i18n['config.rules'].message,
 					position: 'left',
-					to: '/docs/brand/',
+					to: '/rules',
+				},
+				{
+					label: 'FAQ',
+					position: 'left',
+					to: '/faq',
 				},
 				{
 					label: i18n['config.gallery'].message,
 					position: 'left',
 					to: '/gallery',
 				},
-				{
+				/*{
 					label: isLocaleCS ?  '🇬🇧' : '🇨🇿',
 					"aria-label": i18n['config.lang'].message,
 					className: 'header-lang-link',
 					position: 'right',
 					href: isLocaleCS ? URL_EN : URL_CS,
-				},
+				},*/
 			]
 		},
 		footer: {

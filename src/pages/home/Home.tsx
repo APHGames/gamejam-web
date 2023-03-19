@@ -14,6 +14,14 @@ import LogoGrafit from '../../../static/img/pages/index/logo_grafit.svg'
 import LogoSage from '../../../static/img/pages/index/logo_sagelab.svg'
 import LogoAPH from '../../../static/img/pages/index/logo_aphgames.svg'
 
+import PartnersAPH from '../../../static/img/pages/index/sponsors/partners_aphgames.svg'
+import PartnersCesnet from '../../../static/img/pages/index/sponsors/partners_cesnet.png'
+import PartnersIPR from '../../../static/img/pages/index/sponsors/partners_ipr.png'
+import PartnersWarhorse from '../../../static/img/pages/index/sponsors/partners_warhorse.png'
+
+import colors from '../../internals/colors';
+
+
 const Programme = () => {
 	return (
 		<S.Section>
@@ -21,7 +29,7 @@ const Programme = () => {
 				<S.Vertical>
 					<h3>Program</h3>
 					<S.Programme>
-						<S.Frame width={320}>
+						<S.Frame $width={320}>
 							<h3>Pátek</h3>
 							<S.Agenda>
 								<div>11:00</div>
@@ -40,7 +48,7 @@ const Programme = () => {
 								<div>Zvláštní režim budovy</div>
 							</S.Agenda>
 						</S.Frame>
-						<S.Frame width={320}>
+						<S.Frame $width={320}>
 							<h3>Sobota</h3>
 							<S.Agenda>
 								<div>8:00</div>
@@ -59,7 +67,7 @@ const Programme = () => {
 								<div>Lanparty v SAGELabu</div>
 							</S.Agenda>
 						</S.Frame>
-						<S.Frame width={320}>
+						<S.Frame $width={320}>
 							<h3>Neděle</h3>
 							<S.Agenda>
 								<div>8:00</div>
@@ -98,6 +106,22 @@ const Companies = () => {
 	)
 }
 
+const Sponsors = () => {
+	return (
+		<S.Section>
+			<S.SectionContainer>
+			<h3>Sponzoři</h3>
+			<S.Logos>
+				<PartnersAPH />
+				<img src={PartnersCesnet} />
+				<img src={PartnersIPR} />
+				<img src={PartnersWarhorse} />
+			</S.Logos>
+			</S.SectionContainer>
+		</S.Section>
+	)
+}
+
 export const Home = () => {
 	const { siteConfig } = useDocusaurusContext();
 	const context = useDocusaurusContext();
@@ -117,6 +141,7 @@ export const Home = () => {
 			<Companies />
 			<Welcome />
 			<Programme />
+			<Sponsors />
 		</Layout>
 	);
 };

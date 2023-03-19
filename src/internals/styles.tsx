@@ -14,7 +14,19 @@ export const fontSizeXlarge = 'clamp(30px, 2vw, 46px)';
 export const fontSizeXxlarge = 'clamp(40px, 2vw, 64px)';
 export const fontSizeXxxlarge= 'clamp(56px, 2vw, 80px)';
 
-export const Section = styled.section`
+
+export const Section = styled.section<{
+	$bgrColor?: string;
+	$bgr?: string;
+}>`
+	${p => p.$bgrColor ? `background-color: ${p.$bgrColor};` : ''}
+	
+	${p => p.$bgr ? `
+		background: url(${p.$bgr});
+		background-size: cover;
+		background-repeat: no-repeat;
+	` : ''}
+
 	width: 100%;
 
 	& + section {
@@ -97,7 +109,7 @@ export const Frame = styled.div<{
 	border-image-outset: 0px 0px 0px 0px;
 	border-image-repeat: repeat repeat;
 	border-image-source: url(${frame});
-	width: ${p => p.width ?? '520'}px;
+	width: ${p => p.$width ?? '520'}px;
 	margin: 10px;
 
 	background-color: ${colors.texasrose};
