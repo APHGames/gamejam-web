@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 export const Countdown = () => {
 
-	const [time, setTime] = useState(null);
+	const [time, setTime] = useState(new Date().getTime());
 
 	useEffect(() => {
 		const interval = setInterval(() => setTime(new Date().getTime()), 1000);

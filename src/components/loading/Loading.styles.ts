@@ -1,6 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 import colors from '../../internals/colors';
 
+export * from '../../internals/styles';
+
 const spinner = keyframes`
 	0% {
 		transform: rotate(0deg);
@@ -11,10 +13,13 @@ const spinner = keyframes`
   	}
 `
 
-export const Container = styled.div`
+
+export const Container = styled.div<{$center: boolean }>`
 	width: 100%;
+	${p => p.$center ? 'flex: 1 0 auto;' : ''}
 	display: flex;
 	justify-content: center;
+	align-items: center;
 `;
 
 export const Loading = styled.div`

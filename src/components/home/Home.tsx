@@ -17,10 +17,11 @@ import PartnersIPR from '../../../static/img/pages/index/sponsors/partners_ipr.p
 import PartnersWarhorse from '../../../static/img/pages/index/sponsors/partners_warhorse.png'
 
 import Photo from '../../../static/img/pages/index/photo.jpg';
-import useDevice from '../../hooks/useDevice';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-
+import useWindowSize from '../../hooks/useWindowSize';
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import { Loading } from '../loading/Loading';
+  
 // TODO!!! Welcome does not work for build.. it corrupts the internal/styles.ts
 const Welcome = () => (
 	<S.Section $bgr={Photo}>
@@ -158,21 +159,24 @@ export const Home = () => {
 	// moreover, with this hook, it returns this error: 
 	// [ERROR] Unable to build website for locale cs. 
     // [ERROR] Error: docusaurus_tag meta tag not found. This is a bug and should never happen.
-	const device = useDevice();
+	const device = useWindowSize();
 
 	// we need to wait for device detection 
-	return (device && 
+	return (
 		<Layout description={siteConfig.customFields.description as string}>
 			<DocusaurusHead>
 				<link rel="canonical" href={siteConfig.url} />
 			</DocusaurusHead>
-			<main>
-				<Parallax isMobile={device.isMobile} />
-				<Companies />
-				<Welcome />
-				<Programme />
-				<Sponsors />
-			</main>
+			{device != 'ssr' && (
+				<main>
+					<Parallax isMobile={device == 'mobile'} />
+					<Companies />
+					<Welcome />
+					<Programme />
+					<Sponsors />
+				</main>
+			)}
+			{device === 'ssr' && <Loading center={true} />}
 		</Layout>
 	);
 };

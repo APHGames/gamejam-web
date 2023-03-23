@@ -234,6 +234,11 @@ body {
 	transition: var(--ifm-transition-fast) ease color;
 }
 
+.main-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
 
 /**
  *

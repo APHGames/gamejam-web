@@ -16,7 +16,7 @@ export const Questions = () => (
 				</S.Frame>
 				<S.Frame $width={'820px'}>
 					<h4>Je možné v budově přespat?</h4>
-					<p>Ano. Je ale potřeba mít na paměti, že budova se na noc uzavírá a zastřešuje, nebude ji tedy v nočních hodinách možné opustit. Ke spaní bude vyhrazeno jedno patro, k zapůjčení budou žíněnky. Těch je však omezený počet - konkrétní detaily budou diskutovány na Discordu.</p>
+					<p>Ano. Je ale potřeba mít na paměti, že budova se na noc uzavírá a zastřešuje, nebude ji tedy v nočních hodinách možné opustit ani se do ní vrátit. Ke spaní bude vyhrazeno jedno patro, k zapůjčení budou žíněnky. Těch je však omezený počet - konkrétní detaily budou diskutovány na Discordu.</p>
 				</S.Frame>
 				<S.Frame $width={'820px'}>
 					<h4>Je možné použít assety, které jsme našli free v asset storu v Unity?</h4>

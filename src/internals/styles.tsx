@@ -123,7 +123,7 @@ export const Frame = styled.div<{
 	border-image-outset: 0px 0px 0px 0px;
 	border-image-repeat: repeat repeat;
 	border-image-source: url(${frame});
-	width: ${p => p.$width ?? '520'};
+	width: min(${p => p.$width ?? '520px'}, 80vw);
 	margin: 10px;
 
 	background-color: ${(p) => p.$color ?? colors.texasrose};

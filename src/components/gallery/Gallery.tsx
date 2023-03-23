@@ -224,9 +224,9 @@ export const Gallery = () => {
 						</S.Vertical>
 					</S.SectionContainer>
 				</S.Section>
-				<GameJam1 />
-				<GameJam2 />
 				<GameJam3 />
+				<GameJam2 />
+				<GameJam1 />
 			</main>
 		</Layout>
 	);

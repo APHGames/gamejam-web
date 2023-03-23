@@ -25,7 +25,7 @@ export const Overlay = styled.div<{$isMobile: boolean }>`
 
 export const Countdown = styled.div`
 	position: sticky;
-	bottom: 12vh;
+	bottom: min(15vw, 8rem);
 	width: 100%;
 	font-size: ${fontSizeNormal} !important;
 	line-height: ${fontSizeXlarge};

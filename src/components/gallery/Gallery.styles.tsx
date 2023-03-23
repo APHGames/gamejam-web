@@ -5,7 +5,7 @@ import colors from '../../internals/colors';
 export * from '../../internals/styles';
 
 // todo refactor this
-export const GameCard = styled(S.Frame)`
+export const GameCard = styled(S.Frame).attrs({$width: '100%'})`
 
 
 	> div {
