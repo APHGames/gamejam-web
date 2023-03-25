@@ -1,6 +1,6 @@
 import DocusaurusHead from '@docusaurus/Head';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import React from 'react';
+import React, { useMemo } from 'react';
 import Layout from '@theme/Layout';
 
 import * as S from './Gallery.styles';
@@ -33,6 +33,11 @@ const GameCard = ({team, author, place, file, desc}) => (
 );
 
 export const GameJam1 = () => {
+	const rndImages = useMemo(() => [...Array(GJ2020_PICS)].map((_, index) => ({
+		index,
+		sort: Math.random()
+	})).sort((a, b) => a.sort - b.sort), [GJ2020_PICS]);
+
 	return (
 		<S.Section>
 			<S.SectionContainer>
@@ -50,7 +55,7 @@ export const GameJam1 = () => {
 
 					<S.Frame $width={'100%'} $pictureMode={true}>
 						<InfiniteLooper speed={0.1} direction='left'>
-							{[...Array(GJ2020_PICS)].map((_, index) => 
+							{rndImages.map(({index}) => 
 							<S.CarouselItem $pictureMode={true} $width={'600px'} key={index}>
 								<img src={useBaseUrl(`img/pages/gallery/gj2020/${((index + 1) + '').padStart(2, '0')}.jpg`)} />
 							</S.CarouselItem>)}
@@ -80,6 +85,11 @@ export const GameJam1 = () => {
 }
 
 export const GameJam2 = () => {
+	const rndImages = useMemo(() => [...Array(GJ2022_1_PICS)].map((_, index) => ({
+		index,
+		sort: Math.random()
+	})).sort((a, b) => a.sort - b.sort), [GJ2022_1_PICS]);
+
 	return (
 		<S.Section>
 			<S.SectionContainer>
@@ -97,7 +107,7 @@ export const GameJam2 = () => {
 
 					<S.Frame $width={'100%'} $pictureMode={true}>
 						<InfiniteLooper speed={0.1} direction='left'>
-							{[...Array(GJ2022_1_PICS)].map((_, index) => 
+							{rndImages.map(({ index }) => 
 							<S.CarouselItem $pictureMode={true} $width={'600px'} key={index}>
 								<img src={useBaseUrl(`img/pages/gallery/gj2022_1/${((index + 1) + '').padStart(2, '0')}.jpg`)} />
 							</S.CarouselItem>)}
@@ -124,6 +134,11 @@ export const GameJam2 = () => {
 }
 
 export const GameJam3 = () => {
+	const rndImages = useMemo(() => [...Array(GJ2022_2_PICS)].map((_, index) => ({
+		index,
+		sort: Math.random()
+	})).sort((a, b) => a.sort - b.sort), [GJ2022_2_PICS]);
+
 	return (
 		<S.Section>
 			<S.SectionContainer>
@@ -141,7 +156,7 @@ export const GameJam3 = () => {
 
 					<S.Frame $width={'100%'} $pictureMode={true}>
 						<InfiniteLooper speed={0.1} direction='left'>
-							{[...Array(GJ2022_2_PICS)].map((_, index) => 
+							{rndImages.map(({ index }) => 
 							<S.CarouselItem $pictureMode={true} $width={'600px'} key={index}>
 								<img src={useBaseUrl(`img/pages/gallery/gj2022_2/${((index + 1) + '').padStart(2, '0')}.jpg`)} />
 							</S.CarouselItem>)}

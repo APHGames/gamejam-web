@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project/subject will be documented in this file.
 
+## [0.1.1] - 2023-03-25
+### Changed
+Added random sort to gallery
+
+
 ## [0.1.0] - 2023-03-23
 ### Changed
 Fixed SSR layout issue

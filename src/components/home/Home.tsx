@@ -11,10 +11,10 @@ import LogoGrafit from '../../../static/img/pages/index/logo_grafit.svg'
 import LogoSage from '../../../static/img/pages/index/logo_sagelab.svg'
 import LogoAPH from '../../../static/img/pages/index/logo_aphgames.svg'
 
-import PartnersAPH from '../../../static/img/pages/index/sponsors/partners_aphgames.svg'
 import PartnersCesnet from '../../../static/img/pages/index/sponsors/partners_cesnet.png'
 import PartnersIPR from '../../../static/img/pages/index/sponsors/partners_ipr.png'
 import PartnersWarhorse from '../../../static/img/pages/index/sponsors/partners_warhorse.png'
+import PartnersZotac from '../../../static/img/pages/index/sponsors/partners_zotac.png'
 
 import Photo from '../../../static/img/pages/index/photo.jpg';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -52,7 +52,7 @@ const Programme = () => {
 						<S.Frame $width={'320px'}>
 							<h3>Pátek 7.4.</h3>
 							<S.Agenda>
-								<div>11:00</div>
+								<div>12:00</div>
 								<div>Otevření dveří</div>
 
 								<div>12:30</div>
@@ -61,8 +61,8 @@ const Programme = () => {
 								<S.Highlight>13:00</S.Highlight>
 								<S.Highlight>Začátek programování</S.Highlight>
 
-								<div>17:30</div>
-								<div>Networking a rozbor minulých her</div>
+								<div>17:00</div>
+								<div>Rozbor minulých her</div>
 
 								<div>20:00</div>
 								<div>Budova se zavírá</div>
@@ -100,9 +100,9 @@ const Programme = () => {
 								<div>Prezentace her</div>
 
 								<div>16:00</div>
-								<div>Vyhlášení vítězů</div>
+								<div>Vyhlášení cen</div>
 
-								<div>16:30</div>
+								<div>17:00</div>
 								<div>Volná zábava</div>
 							</S.Agenda>
 						</S.Frame>
@@ -132,10 +132,10 @@ const Sponsors = () => {
 			<S.SectionContainer>
 			<h3>Sponzoři</h3>
 			<S.Logos>
-				<PartnersAPH />
 				<img src={PartnersCesnet} />
 				<img src={PartnersIPR} />
 				<img src={PartnersWarhorse} />
+				<img src={PartnersZotac} />
 			</S.Logos>
 			</S.SectionContainer>
 		</S.Section>
@@ -154,11 +154,6 @@ export const Home = () => {
 		loading: Loading,
 	});*/
 
-	// TODO... very weird bug -> this whole layout only works upon a second render... and thanks to
-	// this hook, it will not render for the first time - FIXME!
-	// moreover, with this hook, it returns this error: 
-	// [ERROR] Unable to build website for locale cs. 
-    // [ERROR] Error: docusaurus_tag meta tag not found. This is a bug and should never happen.
 	const device = useWindowSize();
 
 	// we need to wait for device detection 
