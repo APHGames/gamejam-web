@@ -15,6 +15,7 @@ import PartnersCesnet from '../../../static/img/pages/index/sponsors/partners_ce
 import PartnersIPR from '../../../static/img/pages/index/sponsors/partners_ipr.png'
 import PartnersWarhorse from '../../../static/img/pages/index/sponsors/partners_warhorse.png'
 import PartnersZotac from '../../../static/img/pages/index/sponsors/partners_zotac.png'
+import PartnersVision from '../../../static/img/pages/index/sponsors/partners_visiongame.svg'
 
 import Photo from '../../../static/img/pages/index/photo.jpg';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -22,7 +23,8 @@ import useWindowSize from '../../hooks/useWindowSize';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Loading } from '../loading/Loading';
   
-// TODO!!! Welcome does not work for build.. it corrupts the internal/styles.ts
+// TODO! Welcome in i18n folder does not work for build.. it corrupts the internal/styles.ts
+// hence, we moved it here
 const Welcome = () => (
 	<S.Section $bgr={Photo}>
 		<S.SectionContainer>
@@ -62,7 +64,7 @@ const Programme = () => {
 								<S.Highlight>Začátek programování</S.Highlight>
 
 								<div>17:00</div>
-								<div>Rozbor minulých her</div>
+								<div>Představení týmů a slovo poroty</div>
 
 								<div>20:00</div>
 								<div>Budova se zavírá</div>
@@ -136,6 +138,7 @@ const Sponsors = () => {
 				<img src={PartnersIPR} />
 				<img src={PartnersWarhorse} />
 				<img src={PartnersZotac} />
+				<PartnersVision />
 			</S.Logos>
 			</S.SectionContainer>
 		</S.Section>
@@ -145,14 +148,6 @@ const Sponsors = () => {
 export const Home = () => {
 	const { siteConfig } = useDocusaurusContext();
 	const context = useDocusaurusContext();
-	const { currentLocale } = context.siteConfig.customFields;
-
-	/*
-	not working, as styles are not properly loaded
-	const Welcome = Loadable({
-		loader: () => import(`../../../i18n/${currentLocale}/components/Welcome.tsx`),
-		loading: Loading,
-	});*/
 
 	const device = useWindowSize();
 

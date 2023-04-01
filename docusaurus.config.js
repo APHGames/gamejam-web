@@ -8,6 +8,7 @@ const isLocaleCS = currentLocale === 'cs';
 const isLocaleEN = currentLocale === 'en';
 
 const URL_CS = 'https://gamejam.aphgames.cz';
+// not supported yet!
 const URL_EN = 'https://gamejam.aphgames.io';
 
 let url = isLocaleCS ? URL_CS : URL_EN;

@@ -5,7 +5,7 @@ import parchment from '../../static/img/global/parchment.png';
 
 import React from 'react';
 
-// TODO keep in sync with fonts.scss
+// keep in sync with fonts.scss
 export const fontSizeSmall = 'clamp(14px, 2vw, 18px)';
 export const fontSizeNormal = 'clamp(16px, 2vw, 20px)';
 export const fontSizeLarge = 'clamp(18px, 2vw, 24px)';

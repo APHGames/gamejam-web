@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from '@site/src/internals/styles';
 import Photo from '../../../static/img/pages/index/photo.jpg';
 
-
+// not used at the moment. Welcome component is included directly in the Home Page
 export const Welcome = () => (
 	<S.Section $bgr={Photo}>
 		<S.SectionContainer>

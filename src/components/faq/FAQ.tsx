@@ -63,7 +63,6 @@ export const Questions = () => (
 
 export const FAQ = () => {
 	const { siteConfig } = useDocusaurusContext();
-	const context = useDocusaurusContext();
 
 	return (
 		<Layout description={siteConfig.customFields.description as string} title='Časté otázky a odpovědi'>

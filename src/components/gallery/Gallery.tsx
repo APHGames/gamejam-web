@@ -4,11 +4,10 @@ import React, { useMemo } from 'react';
 import Layout from '@theme/Layout';
 
 import * as S from './Gallery.styles';
-
 import { InfiniteLooper } from './Looper';
-import colors from '../../internals/colors';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+// number of pictures for each year
 const GJ2020_PICS = 17;
 const GJ2022_1_PICS = 17;
 const GJ2022_2_PICS = 27;
@@ -167,21 +166,21 @@ export const GameJam3 = () => {
 					<S.Vertical>
 						<GameCard team={'Space Origin'} author={'2 autoři'} place={'1. místo'} file={'gj2022_2/games/08.jpg'} 
 							desc={'Hra pro (ne)milovníky matematiky. Protivníkem jsou zde totiž funkce: sin, cos, a především ty nejzákeřnější - tan a cotg! A proč pro hráči funkce jdou? Inu, protože hráč je v systému této matematické dimenze [0, 0]!'} />
-						<GameCard team={'Spirate'} author={'6 autorů'} place={'nejlepší grafika'} file={'gj2022_2/games/02.jpg'} 
+						<GameCard team={'Spirate'} author={'5 autorů'} place={'nejlepší grafika'} file={'gj2022_2/games/02.jpg'} 
 							desc={'Kooperační hra pro dva hráče střídajících se nejen v úkolu doslova sisyfovském, ale i v užívání jedné zbraně. A navíc v nádherném, barevně dokonale vyladěném, grafickém hávu.'} />
-						<GameCard team={'Haunted House'} author={'5 autorů'} place={'skvělý coop'} file={'gj2022_2/games/03.jpg'} 
+						<GameCard team={'Haunted House'} author={'6 autorů'} place={'skvělý coop'} file={'gj2022_2/games/03.jpg'} 
 							desc={'Atypická kooperační hra pro tři hráče - dva hráči (na jedné klávesnici) loví ducha a objevují tajemství strašidelného domu, zatímco třetí jim radí texty z mystické exorcistické knihy - prostě ideální párty hra!'} />
 						<GameCard team={'Escape from Brno'} author={'5 autorů'} place={'nejhumornější hra'} file={'gj2022_2/games/06.jpg'} 
 							desc={'Co říci o této hře? Že je zábavná? Skvěle nakreslená? Dobře nadabovaná? Slovy autorů: "Útěk z Brna je dokumentární biografická hra o jednom Pražákovi a snaží se hráče seznámit s krutou realitou místa zvané Brno".'} />
-						<GameCard team={'Rhune'} author={'5 autorů'} place={'nejakustičtější hra'} file={'gj2022_2/games/10.jpg'} 
+						<GameCard team={'Rhune'} author={'3 autoři'} place={'nejakustičtější hra'} file={'gj2022_2/games/10.jpg'} 
 							desc={'Tato rytmicky založená hudební tower defense je kreativní spojení nečekaného. A funguje opravdu skvěle! A jednoduchý, čistý a líbivý design, a skvělý tutoriál, to jen podtrhují.'} />
 						<GameCard team={'Binary Anomaly'} author={'1 autor'} place={'110011001010!'} file={'gj2022_2/games/09.jpg'} 
 							desc={'Tato arkádovka sice oplývá jednoduchou a nedodělanou grafikou, ale zároveň skvělým nápadem - logický, hádankový coop hratelný i v jednom hráči sestavujícím binární zápis zadaného čísla.'} />
-						<GameCard team={'Spirit of the Forest'} author={'5 autorů'} place={'skvělá atmosféra'} file={'gj2022_2/games/04.jpg'} 
+						<GameCard team={'Spirit of the Forest'} author={'1 autor'} place={'skvělá atmosféra'} file={'gj2022_2/games/04.jpg'} 
 							desc={'Jednoduchá hra jediného autora. Ač nedodělaná, genius loci mystického lesa ohroženého chřadnutím a korupcí z ní přímo dýchá.'} />
 						<GameCard team={'Just a Ghost'} author={'1 autor'} place={'největší progres'} file={'gj2022_2/games/07.jpg'} 
 							desc={'Hříčka stvořená autorkou za jednoduchým účelem - naučit se Unreal Engine. A povedlo se. Stvořen byl hladový duch matematické dimenze, který zásadně požírá jen prvky se součtem nula.'} />
-						<GameCard team={'Wrath of the Forest'} author={'3 autoři'} place={'nejlepší strategie'} file={'gj2022_2/games/05.jpg'} 
+						<GameCard team={'Wrath of the Forest'} author={'4 autoři'} place={'nejlepší strategie'} file={'gj2022_2/games/05.jpg'} 
 							desc={'Tým FW je stálicí fitích gamejamů a vždy přijde s něčím překvapivým a inovativním. A tentokrát to byla tahová strategie! Dva duchová ve hře s nulovým součtem soupeří pomocí hord lišek, ptactva a medvědů o to, komu bude patřit les a jak bude vypadat.'} />
 						<GameCard team={'Floor Zer0'} author={'2 autoři'} place={'nejlepší runy'} file={'gj2022_2/games/11.jpg'} 
 							desc={'Tato hra, která nejkreativněji používá mechaniku run. Ty zde totiž nenacházíte, ale vytváříte. A to pomocí numerické klávesnice. Zvládnete porazit všechny bosse a dostat se až na nulté podlaží?'} />
@@ -197,8 +196,6 @@ export const GameJam3 = () => {
 
 export const Gallery = () => {
 	const { siteConfig } = useDocusaurusContext();
-	const context = useDocusaurusContext();
-
 
 	return (
 		<Layout description={siteConfig.customFields.description as string} title='Galerie předchozích výtvorů'>

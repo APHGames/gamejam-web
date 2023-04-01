@@ -63,8 +63,7 @@ export const Rules = () => {
 	const { siteConfig } = useDocusaurusContext();
 	const context = useDocusaurusContext();
 
-	// todo.. main is here just for the local search
-
+	// main is here just for the local search
 	return (
 		<Layout description={siteConfig.customFields.description as string} title='Pravidla GameJamu'>
 			<DocusaurusHead>

@@ -2,6 +2,8 @@ import React from 'react';
 import * as S from './Home.styles';
 import { useEffect, useState } from 'react';
 
+const GAMEJAM_START = 'Apr 7, 2023 13:00:00';
+
 export const Countdown = () => {
 
 	const [time, setTime] = useState(new Date().getTime());
@@ -15,7 +17,7 @@ export const Countdown = () => {
 
 	  if(time) {
 		// Set the date we're counting down to
-		const countDownDate = new Date('Apr 7, 2023 13:00:00').getTime();
+		const countDownDate = new Date(GAMEJAM_START).getTime();
 		const now = time;
 
 		// Find the distance between now and the count down date
@@ -28,6 +30,10 @@ export const Countdown = () => {
 		const seconds = `${Math.floor((distance % (1000 * 60)) / 1000)}`.padStart(2, '0');
 
 		const text = days + ' : ' + hours + ' : ' + minutes + ' : ' + seconds;
+
+		if(distance < 0) {
+			return null;
+		}
 
 		return (
 			<S.Countdown>{text}</S.Countdown>

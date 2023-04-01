@@ -27,7 +27,7 @@ project
 - clone it
 - install [nodeJS](https://nodejs.org/en/download/), LTS version if possible 
 - execute `npm install`
-- run `npm start_en` to run the English version, or `npm start_cs` to run the Czech version
+- run `npm start_en` to run the English version (not translated yet), or `npm start_cs` to run the Czech version
 - navigate to `localhost:3000`
 
 
@@ -35,5 +35,5 @@ Changelog is available [here](./CHANGELOG.md)
 
 ## Deployment
 
-- the current EN version is deployed on [gamejam.aphgames.io](https://gamejam.aphgames.io)
+- the current EN version is not deployed yet
 - the current CZ version is deployed on [gamejam.aphgames.cz](https://gamejam.aphgames.cz)

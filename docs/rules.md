@@ -5,5 +5,4 @@ title: Rules
 import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Rules
-TODO
+## Not used anymore (React page is used instead)
